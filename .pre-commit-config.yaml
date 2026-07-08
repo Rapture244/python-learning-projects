@@ -12,3 +12,14 @@ repos:
 
       # 2) Ruff Formatter -- auto-format code (style only)
       - id: ruff-format
+
+  # ================================================================================================================== #
+  #                                                  BASEDPYRIGHT                                                     #
+  # ================================================================================================================== #
+  - repo: https://github.com/DetachHead/basedpyright-prek-mirror
+    rev: 1.39.9    # basedpyright has no 'v' prefix -- check for a newer tag before pinning long-term
+    hooks:
+      - id: basedpyright
+        pass_filenames: false                            # analyze the whole project, not just staged files
+        args: ["--project", "pyrightconfig.json"]
+        # basedpyright fails on warnings by default (failOnWarnings) -- no extra flag needed for that.
