@@ -20,7 +20,9 @@ authors = [
 requires-python = ">=3.13"
 
 
-dependencies = []
+dependencies = [
+    "basedpyright>=1.39.9",
+]
 
 [project.urls]
 Homepage = "https://github.com/Rapture244/python-learning-projects"
@@ -37,6 +39,10 @@ Changelog = "https://github.com/Rapture244/python-learning-projects/blob/main/CH
 
 # --- uv-native, PEP 735: dev-only, never published or pip-installable ---
 [dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+    "prek>=0.4.8",
+]
 
 
 # --- PEP 621, for pip/poetry/PyPI: installable as your-project[dev] etc. ---
