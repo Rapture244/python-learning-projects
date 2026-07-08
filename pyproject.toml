@@ -1,0 +1,91 @@
+# ==================================================================================================================== #
+#                                              BUILD SYSTEM (PEP 517/518)                                              #
+# ==================================================================================================================== #
+[build-system]
+requires = ["hatchling>=1.30", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+
+# ==================================================================================================================== #
+#                                              PROJECT METADATA (PEP 621)                                              #
+# ==================================================================================================================== #
+[project]
+name = "python-learning-projects"
+dynamic = ["version"]
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ovidiu.pascal", email = "pascal.ovidiuu@gmail.com" }
+]
+requires-python = ">=3.13"
+
+keywords = ["keyword1", "keyword2"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Rapture244/python-learning-projects"
+Repository = "https://github.com/Rapture244/python-learning-projects.git"
+Issues = "https://github.com/Rapture244/python-learning-projects/issues"
+Changelog = "https://github.com/Rapture244/python-learning-projects/blob/CHANGELOG.md"
+
+# ==================================================================================================================== #
+#                                              DEPENDENCY GROUPS -- TWO MECHANISMS                                     #
+# ==================================================================================================================== #
+# NOTE: these two blocks are NOT auto-synced. If you add a package to one,
+# you must manually mirror it in the other, or a pip-only user and a uv user
+# will end up with different dev environments.
+
+# --- uv-native, PEP 735: dev-only, never published or pip-installable ---
+[dependency-groups]
+
+
+# --- PEP 621, for pip/poetry/PyPI: installable as your-project[dev] etc. ---
+[project.optional-dependencies]
+
+# ==================================================================================================================== #
+#                                               CLI ENTRY POINT                                                        #
+# ==================================================================================================================== #
+[project.scripts]
+#your-command = "your_project.cli:app"
+
+# ==================================================================================================================== #
+#                                             BUILD CONFIG (HATCHLING + HATCH-VCS)                                     #
+# ==================================================================================================================== #
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build]
+exclude = [
+    ".venv/**",
+    ".env/**",
+    ".idea/**",
+    ".vscode/**",
+    ".DS_Store",
+    "*.swp",
+    "*.swo",
+    ".mypy_cache/**",
+    ".ruff_cache/**",
+    ".pytest_cache/**",
+    ".coverage",
+    "htmlcov/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/python_learning_projects"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/python_learning_projects/**",
+    "docs/**",
+    "CHANGELOG.md",
+    "README.md",
+    "pyproject.toml",
+]
