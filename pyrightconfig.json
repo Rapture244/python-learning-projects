@@ -46,7 +46,7 @@
     "venv": ".venv",          // Name of the environment inside venvPath
 
     // Target Python version for analysis
-    "pythonVersion": "YOUR_PYTHON_VERSION",   // e.g. "3.13"
+    "pythonVersion": "3.13",   // e.g. "3.13"
 
     // basedpyright's own curated strictness preset, sitting between "standard" and "strict".
     // Other valid values: "off", "basic", "standard", "strict", "all".
