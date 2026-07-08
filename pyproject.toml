@@ -12,21 +12,13 @@ build-backend = "hatchling.build"
 [project]
 name = "python-learning-projects"
 dynamic = ["version"]
-description = "Add your description here"
+description = "Independent Python projects for learning core concepts, built the Zen of Python way"
 readme = "README.md"
 authors = [
     { name = "ovidiu.pascal", email = "pascal.ovidiuu@gmail.com" }
 ]
 requires-python = ">=3.13"
 
-keywords = ["keyword1", "keyword2"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: POSIX :: Linux",
-]
 
 dependencies = []
 
@@ -34,7 +26,7 @@ dependencies = []
 Homepage = "https://github.com/Rapture244/python-learning-projects"
 Repository = "https://github.com/Rapture244/python-learning-projects.git"
 Issues = "https://github.com/Rapture244/python-learning-projects/issues"
-Changelog = "https://github.com/Rapture244/python-learning-projects/blob/CHANGELOG.md"
+Changelog = "https://github.com/Rapture244/python-learning-projects/blob/main/CHANGELOG.md"
 
 # ==================================================================================================================== #
 #                                              DEPENDENCY GROUPS -- TWO MECHANISMS                                     #
